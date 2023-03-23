@@ -78,7 +78,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_MultiDialog"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
         android:text="버튼 알림창 띄우기"
         android:textSize="20sp"
         android:textStyle="bold" />

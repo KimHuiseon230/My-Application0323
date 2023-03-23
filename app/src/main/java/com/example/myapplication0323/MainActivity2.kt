@@ -164,10 +164,12 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener,
                 val dialogBuilder = AlertDialog.Builder(this)
                 var userDialog: AlertDialog
                 /*사용자 화면 인플렉션 하기*/
+
                 userBinding = RegisterLayoutBinding.inflate(layoutInflater)
                 /*사용자 다이얼로그 제목,뷰 설정 보이기*/
                 dialogBuilder.setTitle("사용자 정보 입력하기  창")
                 dialogBuilder.setIcon(R.drawable.computer_24)
+                dialogBuilder.setView(userBinding.root)
                 /* dialogBuilder.create() dialogBuilder 정보를 dismiss() 새로 추가해서 userDialog 넘겨줌*/
                 userDialog = dialogBuilder.create()
                 userDialog .show()
