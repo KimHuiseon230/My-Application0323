@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:text="Toast show "
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -67,7 +67,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_ItemDialog"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
         android:text="체크박스 알림창 띄우기"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -93,13 +92,34 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btn_FindLocate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_CustomDialog"
+        android:layout_centerInParent="true"
+        android:text="위치추적 검사하기"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_Rington"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_FindLocate"
+        android:layout_centerInParent="true"
+        android:text="소리듣기"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
     <TextView
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:text="이름 입력 보이기"
         android:textColor="#000000"
         android:textSize="20sp"

@@ -5,6 +5,10 @@ import android.app.DatePickerDialog
 import android.app.ProgressDialog.show
 import android.app.TimePickerDialog
 import android.content.DialogInterface
+import android.content.pm.PackageManager
+import android.media.Ringtone
+import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,10 +21,12 @@ import android.widget.TextView
 import android.widget.TimePicker
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import com.example.myapplication0323.databinding.ActivityMain2Binding
 import com.example.myapplication0323.databinding.ActivityMainBinding
 import com.example.myapplication0323.databinding.RegisterLayoutBinding
 import com.example.myapplication0323.databinding.ToastLayoutBinding
+import org.intellij.lang.annotations.Identifier
 
 //View.OnClickListener, DatePickerDialog.OnDateSetListener  각각 사용하는 Listener가 다름
 class MainActivity2 : AppCompatActivity(), View.OnClickListener,
@@ -38,6 +44,9 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener,
         binding.btnMultiDialog.setOnClickListener(this)
         binding.btnSingItemDialog.setOnClickListener(this)
         binding.btnCustomDialog.setOnClickListener(this)
+        binding.btnFindLocate.setOnClickListener(this)
+        binding.btnRington.setOnClickListener(this)
+
     }
 
     //여기에 들어가는 this =MainActivity2를 가리킴. applcation을 가져오라는 이야기가 아님.
@@ -183,7 +192,22 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener,
                     binding.tvMessage.text = userBinding.edName.text.toString()
                     userDialog.dismiss()
                 }
-            }
+            }// end of btn_CustomDialog
+            R.id.btn_FindLocate ->{
+                val state =ContextCompat.checkSelfPermission(applicationContext,"android.permission.ACCESS_FINE_LOCATION")
+                if(state==PackageManager.PERMISSION_GRANTED){
+                    binding.tvMessage.text ="위치추적 권한 요청"
+                }else{ binding.tvMessage.text ="위치추적 권한 불허"}
+            } //end of btn_FindLocate
+            R.id.btn_Rington->{
+                /*사운드 소리 위치 파일을 가져옴
+                    * Uniform Resource Identifier, 리소스를 구분하는 식별자.
+                    * 안드로이드에서 URI의 역할은 리소스(외부 앱, 이미지, 텍스트 등)에 접근할 수 있는 식별자 역할.
+                */
+                val  notification: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                val rington =RingtoneManager.getRingtone(applicationContext, notification)
+                rington.play()
+            }// end of btn_Rington
         }
     }//end of onClick
 
