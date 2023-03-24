@@ -42,8 +42,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     binding.tvEmail.text = userBinding.joinEmail.text.toString()
                     userDialog.dismiss()
                 }
-
-                /*이벤트 처리하기*/
             }
         })
     }
